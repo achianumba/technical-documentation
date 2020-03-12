@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="tech-doc.css">
+  </head>
+  <body>
+    <nav id="navbar">
+        <header>
+          <span>CSS&nbsp;Center&nbsp;Positioning Documentation</span>
+          <button class="menuBtn">Menu</button>
+        </header>
+        <section class="navLinks">
+        <a href="#Introduction" class="nav-link">Introduction</a>
+        <a href="#Text-Align" class="nav-link">Text-Align</a>
+        <a href="#Padding" class="nav-link">Padding</a>
+        <a href="#Margin" class="nav-link">Margin</a>
+        <a href="#CSS_Grid" class="nav-link">CSS Grid</a>
+        <a href="#CSS_Flexbox" class="nav-link">CSS Flexbox</a>
+        </section>
+    </nav>
+        <div id='reading-progress'></div>
+        <main id="main-doc">
+            <section class="main-section" id="Introduction">
+
+                <header id="top">Introduction</header>
+                <article>
+                    <p>
+                      Being able to place elements where you want them on a
+                      webpage gives you better control over the layout of every
+                       site you build. While HTML elements are usually aligned
+                       to the left by default, there are various ways to
+                       vertically and/or horizontally position items on your
+                       webpage to fit the design you have in mind.
+                       <br />
+                       <br />
+                    Traditionally, web-designers used the HTML
+                    <code>&#60;center&#62;</code>
+                    element to center HTML elements horizontally
+                    within containers. However, the
+                    <code>&#60;center&#62;</code> tag is now deprecated.
+                  </p>
+
+                  <p>Enter CSS!</p>
+
+                    <p>Cascading Style Sheets (CSS) offers multiple properties
+                      for centering elements (within their containers) on
+                      web pages. What makes these CCS properties better than
+                      the outdated HTML <code>&#60;center&#62;</code> element
+                      is that
+                      the <code>&#60;center&#62;</code> element only allows
+                      developers to align items horizontally while
+                      CSS properties vertically and/or horizontally center html
+                      elements depending on the developer's/client's
+                      preferences/needs.
+                    </p>
+
+                    <p>Some CSS properties used for aligning elements on a web
+                      page include:
+                    </p>
+
+                    <ul>
+                        <li>Text-Align</li>
+                        <li>Vertical-align</li>
+                        <li>Padding</li>
+                        <li>CSS Grid</li>
+                        <li>CSS Flexbox</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="main-section" id="Text-Align">
+                <header>Text-Align</header>
+                <article>
+                    <p>The <code>text-align</code> property centers text content
+                       horizontally while the <code>vertical-align</code>
+                       property centers text content vertically within its
+                       container.
+                    </p>
+
+                    <pre>
+                    <code>
+   /*Aligns the h2 element to the center (horizontally and vertically)*/
+    h2 {
+        text-align: center;
+        vertical-align: middle;
+        }
+                    </code>
+                    </pre>
+
+                    <p><strong>Note:</strong> The text-align and vertical-align
+                       properties also work on icons because web pages
+                       treat them as text.
+                     </p>
+                </article>
+            </section>
+
+            <section class="main-section" id="Padding">
+                <header>Padding</header>
+                <article>
+                    <p>Setting the same value for all sides
+                      (top, right, bottom, left) of the padding property of an
+                      element centers it horizontally and vertically within its
+                      container.
+                    </p>
+                    <p>The sample CSS code below will center h2 elements
+                      horizontally and vertically.</p>
+                        <pre>
+                        <code>
+    h2 {
+        padding: 12px;
+        }
+          OR
+
+    h2 {
+        padding: 12px 12px 12px 12px;
+        }
+                        </code>
+                        </pre>
+                </article>
+            </section>
+
+            <section class="main-section" id="Margin">
+                <header>Margin</header>
+                <article>
+                    <p>
+                        You can easily center a block level element horizontally
+                         by setting the value <strong>auto</strong> to the CSS
+                        <code>margin</code> property.
+                    </p>
+
+                    <p>Ensure you set the display property to
+                      <code>block</code> if it is an inline element
+                      you wish to center. For example, the code below
+                      horizontally positions all elements with the class "center"
+                      to the center of their containers.
+                    </p>
+
+                    <pre>
+                    <code>
+     .center {
+              width: 70%;
+              margin: auto;
+              }
+
+                OR
+
+             /*For inline elements*/
+     .center {
+              display: block;
+              width: 70%;
+              margin: auto;
+              }
+                    </code>
+                    </pre>
+
+
+
+                    <p>
+                        <strong>Note:</strong> The value of the width property
+                        of the element being centered must be less than the
+                        width of its parent element for this method to work.
+                    </p>
+                </article>
+            </section>
+
+            <section class="main-section" id="CSS_Grid">
+                <header>CSS Grid</header>
+                <article>
+                    <p>Set the CSS <code>display</code> property values to
+                      <code>grid</code> and then set the
+                      <code>justify-content</code>
+                      property to <code>center</code> to horizontally center
+                      child elements of the grid container.
+                    </p>
+                    <p>Here is an example:</p>
+
+                    <pre>
+                    <code>
+     div {
+          display: grid;
+          justify-content: center;
+          }
+                    </code>
+                    </pre>
+
+                    <p>To vertically center the elements within the
+                      grid container, set the value of the
+                      <code>align-items</code> property to
+                      <code>center</code> as follows:</p>
+
+                    <pre>
+                    <code>
+     div {
+          display: grid;
+          align-items: center;
+          }
+                    </code>
+                    </pre>
+                </article>
+            </section>
+
+            <section class="main-section" id="CSS_Flexbox">
+                <header>CSS Flexbox</header>
+                <article>
+                    <p> For the most part, CSS Flexbox has the same set of
+                      properties and values as CSS grid for centering HTML
+                      elements vertically or horizontally.
+                      The only major exception is that you have to set the
+                      <code>display</code> property value to
+                      <code>flex</code> as follows:</p>
+
+                    <pre>
+                    <code>
+      /* center align horizontally */
+       div {
+            display: flex;
+            justify-content: center;
+            }
+
+      /* center align vertically */
+       div {
+            display: flex;
+            align-items: center;
+            }
+                    </code>
+                    </pre>
+                </article>
+            </section>
+    </main>
+    <script src="tech-doc.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
